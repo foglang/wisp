@@ -18,5 +18,7 @@ var content = '';
 process.stdin.resume();
 process.stdin.on('data', function(buf) { content += buf.toString(); });
 process.stdin.on('end', function() {
-  fogWisp(content);
+  fogWisp(content, function(err, res){
+    console.log(res);
+  });
 });
